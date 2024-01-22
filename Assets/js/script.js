@@ -2,8 +2,33 @@
 // - WHEN I click the start button
 // TO-DO: Create a landing page, timer, and a start button for the quiz
 
+//  Start Button
+var startButton = document.querySelector("#start")
+
+startButton.addEventListener("click", function(event){
+
+});
+
 // - THEN a timer starts and I am presented with a question
 // TO-DO: Create the pages of the quiz and program the answer choices, including indicating the correct answer, program the timer to begin ticking when start button is pressed
+
+// Timer 
+var timeEl = document.querySelector("#timer");
+
+var secondsLeft = 10;
+
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Time: " + secondsLeft;
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+
+  }, 1000);
+}
 
 // - WHEN I answer a question
 // - THEN I am presented with another question
@@ -20,3 +45,4 @@
 // - WHEN the game is over
 // - THEN I can save my initials and score
 // TO-DO: Create the page for entering their info and link entries to local storage
+
