@@ -3,24 +3,24 @@
 // TO-DO: Create a landing page, timer, and a start button for the quiz
 
 //  Start Button
-var startButton = document.querySelector("#start")
+var startButton = document.querySelector("#startButton")
 
 startButton.addEventListener("click", function(event){
-
+    startTimer(); 
 });
 
 // - THEN a timer starts and I am presented with a question
 // TO-DO: Create the pages of the quiz and program the answer choices, including indicating the correct answer, program the timer to begin ticking when start button is pressed
 
 // Timer 
-var timeEl = document.querySelector("#timer");
+var timerEl = document.querySelector("#timer");
 
-var secondsLeft = 10;
+var secondsLeft = 60;
 
 function setTime() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timeEl.textContent = "Time: " + secondsLeft;
+    timerEl.textContent = "Time: " + secondsLeft;
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
@@ -28,7 +28,7 @@ function setTime() {
     }
 
   }, 1000);
-}``
+}
 
 // - WHEN I answer a question
 // - THEN I am presented with another question
