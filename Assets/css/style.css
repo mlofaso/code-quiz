@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
