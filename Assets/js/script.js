@@ -28,7 +28,7 @@ function setTime() {
     }
 
   }, 1000);
-}
+}``
 
 // - WHEN I answer a question
 // - THEN I am presented with another question
