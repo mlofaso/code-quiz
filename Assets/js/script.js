@@ -1,30 +1,33 @@
 // - GIVEN I am taking a code quiz
 // - WHEN I click the start button
-// TO-DO: Create a landing page, timer, and a start button for the quiz
+// - THEN a timer starts and I am presented with a question
+// TO-DO: Create a landing page, timer, and a start button for the quiz, have quiz and timer begin when start button clicked
 
 //  Start Button
 var startButton = document.querySelector("#startButton")
 
-startButton.addEventListener("click", function(event){
+function startQuiz() {
+
+}
+
+startButton.addEventListener("click", function(){
+    startQuiz ();
     startTimer(); 
 });
 
-// - THEN a timer starts and I am presented with a question
-// TO-DO: Create the pages of the quiz and program the answer choices, including indicating the correct answer, program the timer to begin ticking when start button is pressed
 
 // Timer 
 var timerEl = document.querySelector("#timer");
 
 var secondsLeft = 60;
 
-function setTime() {
+function startTimer() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
     timerEl.textContent = "Time: " + secondsLeft;
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
-      sendMessage();
     }
 
   }, 1000);
