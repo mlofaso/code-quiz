@@ -14,12 +14,20 @@
     <main>
         <section id="first">
             <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
+            <p>Try to answer the following code-related questions within the time limit.</p>
+            </p>Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
             <button id="startButton">Start Quiz</button>
         </section>
         <section id="questions" class="hide">
             <h2 id="question"></h2>
-            <div id="choices"></div>
+            <div id="choices">`</div>
+        </section>
+        <section id="scoreForm" class="hide">
+            <h2>Quiz Over</h2>
+            <input id="nameInput">
+            <button>Submit</button>
+            <p>Enter Name Here</p> 
+            <p id="userScore"></p>
         </section>
     </main>
     <script src="./assets/js/script.js"></script>

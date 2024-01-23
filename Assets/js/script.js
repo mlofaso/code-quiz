@@ -1,19 +1,26 @@
-// - GIVEN I am taking a code quiz
-// - WHEN I click the start button
-// - THEN a timer starts and I am presented with a question
 
-
-var timerEl = document.querySelector("#timer");
-var startButton = document.querySelector("#startButton");
+var timerEl = document.querySelector('#timer');
+var startButton = document.querySelector('#startButton');
 var secondsLeft = 60;
 var firstContainer = document.querySelector('#first');
-var secondContainer = document.querySelector("#questions");
+var secondContainer = document.querySelector('#questions');
 var timerInterval;
-var questionTitle = document.querySelector("#question")
+var questionTitle = document.querySelector('#question')
 var choices = document.querySelector('#choices')
 var qIndex = 0
+var thirdContainer = document.querySelector('#scoreForm')
 
 var questions = [
+    {
+        title: '1+1',
+        options: [0, 2, 1, 3],
+        answer: "2",
+    },
+    {
+        title: '1+2',
+        options: [0, 2, 1, 3],
+        answer: "3",
+    },
     {
         title: '1+1',
         options: [0, 2, 1, 3],
@@ -32,8 +39,6 @@ function startQuiz() {
     secondContainer.classList.remove('hide');
     displayQuestion();
 }
-
-
 
 function startTimer() {
     timerEl.textContent = "Time: " + secondsLeft;
@@ -56,14 +61,7 @@ function displayQuestion() {
         var button = document.createElement('button');
         button.textContent = questions[qIndex].options[i];
 
-        button.addEventListener('click', function () {
-            console.log(this.textContent);
-            // - WHEN I answer a question - prompt?
-            // - THEN I am presented with another question - more prompts, or a for loop?
-
-            // - WHEN I answer a question incorrectly
-            // - THEN time is subtracted from the clock - decrement
-
+        button.addEventListener('click', function() {
             if (this.textContent !== questions[qIndex].answer) {
                 secondsLeft -= 10;
                 timerEl.textContent = "Time: " + secondsLeft;
@@ -71,23 +69,20 @@ function displayQuestion() {
 
             qIndex++;
 
-
-            // - WHEN all questions are answered or the timer reaches 0
-            // - THEN the game is over - clearInterval
-            // 
-            if(questions.length === qIndex){
-                alert('game over')
-            }else{
-
+            if (questions.length === qIndex) {
+                secondContainer.classList.add('hide');
+                thirdContainer.classList.remove('hide');
+            }
+            else {
                 displayQuestion()
             }
         })
         choices.append(button)
-
     }
 }
 
 // - WHEN the game is over
 // - THEN I can save my initials and score - Local Storage
+
 startButton.addEventListener("click", startQuiz);
 
