@@ -14,29 +14,29 @@ var userScore = document.querySelector('#userScore')
 
 var questions = [
     {
-        title: '1+1',
-        options: [0, 2, 1, 3],
-        answer: "2",
+        title: 'Commonly used data types DO NOT include _______',
+        options: ['strings', 'booleans', 'alerts', 'numbers'],
+        answer: 'alerts',
     },
     {
-        title: '1+2',
-        options: [0, 2, 1, 3],
-        answer: "3",
+        title: 'The condition in an if/else statement is enclosed with ______',
+        options: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
+        answer: 'parenthesis',
     },
     {
-        title: '1+1',
-        options: [0, 2, 1, 3],
-        answer: "2",
+        title: 'Arrays in Javascript can be used to store _____',
+        options: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+        answer: 'all of the above',
     },
     {
-        title: '1+2',
-        options: [0, 2, 1, 3],
-        answer: "3",
+        title: 'String values must be enclosed within ______ when being assigned to variables',
+        options: ['commas', 'curly brackets', 'quotes', 'parenthesis'],
+        answer: 'quotes',
     },
     {
-        title: '1+2',
-        options: [0, 2, 1, 3],
-        answer: "3",
+        title: 'A very useful tool used during development and debugging for printing content to the debugger',
+        options: ['JavaScript', 'terminal/bash', 'for loops', 'console.log'],
+        answer: 'console.log',
     },
 ]
 
