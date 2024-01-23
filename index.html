@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link ref="stylesheet" href="./assets/css/style.css"/>
     <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <header>
@@ -12,10 +12,16 @@
         <div id="timer"></div>
     </header>
     <main>
-        <h1>Coding Quiz Challenge</h1>
-        <p>Try to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
-        <button id="startButton">Start Quiz</button>
-        <script src="./assets/js/script.js"></script>
+        <section id="first">
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit.  Keep in mind that incorrect answers will penalize your score/time by ten seconds.</p>
+            <button id="startButton">Start Quiz</button>
+        </section>
+        <section id="questions" class="hide">
+            <h2 id="question"></h2>
+            <div id="choices"></div>
+        </section>
     </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

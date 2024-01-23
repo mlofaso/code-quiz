@@ -6,10 +6,16 @@
 header {
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 
 main {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.hide {
+    display: none;
 }
