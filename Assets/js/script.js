@@ -5,10 +5,12 @@ var secondsLeft = 60;
 var firstContainer = document.querySelector('#first');
 var secondContainer = document.querySelector('#questions');
 var timerInterval;
-var questionTitle = document.querySelector('#question')
-var choices = document.querySelector('#choices')
-var qIndex = 0
-var thirdContainer = document.querySelector('#scoreForm')
+var questionTitle = document.querySelector('#question');
+var choices = document.querySelector('#choices');
+var qIndex = 0;
+var thirdContainer = document.querySelector('#scoreForm');
+var scores = [];
+var userScore = document.querySelector('#userScore')
 
 var questions = [
     {
@@ -25,6 +27,11 @@ var questions = [
         title: '1+1',
         options: [0, 2, 1, 3],
         answer: "2",
+    },
+    {
+        title: '1+2',
+        options: [0, 2, 1, 3],
+        answer: "3",
     },
     {
         title: '1+2',
@@ -82,7 +89,16 @@ function displayQuestion() {
 }
 
 // - WHEN the game is over
-// - THEN I can save my initials and score - Local Storage
+// - THEN I can save my initials and score
+function saveScore() {
+    // Grab value of nameInput field
+    // Store value in an object variable w/ their score
+    // Push name + value to list of scores array
+    // Save scores array to local storage
+    nameInput = nameInput.value
+};
+
+localStorage.setItem('high scores', JSON.stringify(scores));
 
 startButton.addEventListener("click", startQuiz);
 
