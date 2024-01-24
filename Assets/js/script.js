@@ -86,7 +86,7 @@ function displayQuestion() {
             if (questions.length === qIndex) {
                 secondContainer.classList.add('hide');
                 thirdContainer.classList.remove('hide');
-                clearInterval(timerInterval);
+                clearInterval(timerInterval);``
                 timerEl.textContent = "Time: 0";
             }
             else {
@@ -109,6 +109,7 @@ function saveScore() {
 
 startButton.addEventListener("click", startQuiz);
 
-submitButton.addEventListener("click", saveScore, function(event) {
+submitButton.addEventListener("click", function(event) {
     event.preventDefault();
+    saveScore();
 });
