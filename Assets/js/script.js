@@ -10,7 +10,8 @@ var choices = document.querySelector('#choices');
 var qIndex = 0;
 var thirdContainer = document.querySelector('#scoreForm');
 var scores = [];
-var userScore = document.querySelector('#userScore')
+var userScoreEl = document.querySelector('#userScore')
+var currentScore = 0;
 
 var questions = [
     {
@@ -73,6 +74,10 @@ function displayQuestion() {
                 secondsLeft -= 10;
                 timerEl.textContent = "Time: " + secondsLeft;
             }
+           
+            else {
+                currentScore = currentScore + 20;
+            }
 
             qIndex++;
 
@@ -85,7 +90,7 @@ function displayQuestion() {
             }
         })
         choices.append(button)
-    }
+    } 
 }
 
 // - WHEN the game is over
