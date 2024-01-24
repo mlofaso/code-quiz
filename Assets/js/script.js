@@ -12,6 +12,8 @@ var thirdContainer = document.querySelector('#scoreForm');
 var scores = [];
 var userScoreEl = document.querySelector('#userScore')
 var currentScore = 0;
+var nameInput = document.querySelector('#nameInput');
+var submitButton = document.querySelector('#submit')
 
 var questions = [
     {
@@ -100,10 +102,16 @@ function saveScore() {
     // Store value in an object variable w/ their score
     // Push name + value to list of scores array
     // Save scores array to local storage
-    nameInput = nameInput.value
+    var scoreObject = {
+        name: nameInput.value,
+        score: currentScore,
+    };
+    scores.push (scoreObject);
+    var scoreJSON = JSON.stringify(scores);
+    localStorage.setItem('highScores', scoreJSON);
 };
 
-localStorage.setItem('high scores', JSON.stringify(scores));
-
 startButton.addEventListener("click", startQuiz);
+
+submitButton.addEventListener("click", saveScore);
 
