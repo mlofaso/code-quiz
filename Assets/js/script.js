@@ -86,6 +86,8 @@ function displayQuestion() {
             if (questions.length === qIndex) {
                 secondContainer.classList.add('hide');
                 thirdContainer.classList.remove('hide');
+                clearInterval(timerInterval);
+                timerEl.textContent = "Time: 0";
             }
             else {
                 displayQuestion()
@@ -95,23 +97,18 @@ function displayQuestion() {
     } 
 }
 
-// - WHEN the game is over
-// - THEN I can save my initials and score
 function saveScore() {
-    // Grab value of nameInput field
-    // Store value in an object variable w/ their score
-    // Push name + value to list of scores array
-    // Save scores array to local storage
     var scoreObject = {
         name: nameInput.value,
         score: currentScore,
     };
     scores.push (scoreObject);
-    var scoreJSON = JSON.stringify(scores);
-    localStorage.setItem('highScores', scoreJSON);
+    var highScores = JSON.stringify(scores);
+    localStorage.setItem('highScores', highScores);
 };
 
 startButton.addEventListener("click", startQuiz);
 
-submitButton.addEventListener("click", saveScore);
-
+submitButton.addEventListener("click", saveScore, function(event) {
+    event.preventDefault();
+});
